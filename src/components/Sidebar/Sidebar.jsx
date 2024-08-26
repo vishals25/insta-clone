@@ -93,7 +93,7 @@ const Sidebar = () => {
                 to={item.link || "#"}
                 as={RouterLink}
                 gap={4}
-                _hover={{ bg: "whiteAlpha.400" }}
+                _hover={{ bg: "whiteAlpha.400", borderRadius: "3px" }}
                 p={2}
                 justifyContent={{ base: "center", md: "flex-start" }}
               >
@@ -119,7 +119,7 @@ const Sidebar = () => {
             to={"/auth"}
             as={RouterLink}
             gap={4}
-            _hover={{ bg: "whiteAlpha.400" }}
+            _hover={{ bg: "whiteAlpha.400", borderRadius: "3px" }}
             p={2}
             justifyContent={{ base: "center", md: "flex-start" }}
             mt={"auto"}

@@ -10,8 +10,8 @@ import { BrowserRouter } from "react-router-dom";
 const styles = {
   global: (props) => ({
     body: {
-      bg: mode("gray-100", "#000")(props),
-      color: mode("gray-100", "whiteAlpha.900")(props),
+      bg: mode("white", "#000")(props), // Light mode uses white, dark mode uses black
+      color: mode("#000", "whiteAlpha.900")(props), // Text color adjusted for readability
     },
   }),
 };
@@ -21,9 +21,7 @@ const config = {
   useSystemColorMode: false,
 };
 
-const theme = extendTheme({ config }, styles);
-
-export default theme;
+const theme = extendTheme({ config, styles });
 
 const rootElement = document.getElementById("root");
 ReactDOM.createRoot(rootElement).render(
