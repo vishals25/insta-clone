@@ -11,11 +11,11 @@ import React, { useEffect, useState } from "react";
 import FeedPost from "./FeedPost";
 
 const FeedPosts = () => {
-  const [IsLoading, seIsLoading] = useState(true);
+  const [IsLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      seIsLoading(false);
+      setIsLoading(false);
     }, 2000);
   });
   return (

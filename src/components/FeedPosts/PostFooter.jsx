@@ -14,7 +14,7 @@ import {
   UnlikeLogo,
 } from "../../assets/contants";
 
-const PostFooter = ({ username }) => {
+const PostFooter = ({ username, isProfilePage }) => {
   const [Liked, setLiked] = useState(false);
   const [Likes, setLikes] = useState(1000);
   const handleLike = () => {
@@ -27,7 +27,7 @@ const PostFooter = ({ username }) => {
     }
   };
   return (
-    <Box mb={10}>
+    <Box mb={10} mt={"auto"}>
       <Flex alignItems={"center"} gap={4} w={"full"} mb={2} mt={3}>
         <Box onClick={handleLike} cursor={"pointer"} fontSize={18}>
           {!Liked ? <NotificationsLogo /> : <UnlikeLogo />}
@@ -39,15 +39,20 @@ const PostFooter = ({ username }) => {
       <Text fontWeight={600} fontSize={"small"}>
         {Likes} likes
       </Text>
-      <Text fontWeight={700} fontSize={"small"}>
-        {username}{" "}
-        <Text as="span" fontWeight={400}>
-          Feeling Good
-        </Text>
-      </Text>
-      <Text fontSize={"small"} color={"gray"}>
-        View all 1,000 comments
-      </Text>
+      {!isProfilePage && (
+        <>
+          <Text fontWeight={700} fontSize={"small"}>
+            {username}{" "}
+            <Text as="span" fontWeight={400}>
+              Feeling Good
+            </Text>
+          </Text>
+          <Text fontSize={"small"} color={"gray"}>
+            View all 1,000 comments
+          </Text>
+        </>
+      )}
+
       <Flex alignItems={"center"} gap={2} justifyContent={"space-between"}>
         <InputGroup mx={2}>
           <Input
