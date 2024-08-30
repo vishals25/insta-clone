@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Flex } from "@chakra-ui/react";
 import ProfileHeader from "../../components/Profile/ProfileHeader";
 import ProfileTabs from "../../components/Profile/ProfileTabs";

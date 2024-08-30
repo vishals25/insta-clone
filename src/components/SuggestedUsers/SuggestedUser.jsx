@@ -1,5 +1,5 @@
 import { Avatar, Button, Flex, Text, VStack } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const SuggestedUser = ({ name, followers, avatar }) => {
   const [isFollowed, setIsFollowed] = useState(false);

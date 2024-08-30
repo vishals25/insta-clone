@@ -1,4 +1,3 @@
-import React from "react";
 import { Input, Button } from "@chakra-ui/react";
 import { useState } from "react";
 

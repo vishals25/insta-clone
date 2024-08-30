@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import {
   Input,
   Button,
@@ -9,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import useSignUpWithEmailAndPassword from "../../hooks/useSignUpWithEmailAndPassword";
+import { useState } from "react";
 
 const Signup = () => {
   const [inputs, setInputs] = useState({

@@ -1,13 +1,5 @@
-import {
-  Box,
-  Flex,
-  Grid,
-  GridItem,
-  Skeleton,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import { Box, Grid, Skeleton, VStack } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import ProfilePost from "./ProfilePost";
 
 const ProfilePosts = () => {

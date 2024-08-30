@@ -1,4 +1,3 @@
-import React from "react";
 import SuggestedUser from "./SuggestedUser";
 import { Flex, Link, Text, VStack } from "@chakra-ui/react";
 import SuggestedHeader from "./SuggestedHeader";

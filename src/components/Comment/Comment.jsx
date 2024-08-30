@@ -1,4 +1,3 @@
-import React from "react";
 import { Flex, Text, Avatar } from "@chakra-ui/react";
 const Comment = ({ createdAt, username, ProfilePic, text }) => {
   return (

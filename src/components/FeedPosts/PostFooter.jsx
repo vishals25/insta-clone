@@ -7,7 +7,7 @@ import {
   InputRightElement,
   Button,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   CommentLogo,
   NotificationsLogo,

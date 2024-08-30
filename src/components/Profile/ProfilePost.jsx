@@ -9,7 +9,6 @@ import {
   Divider,
   VStack,
 } from "@chakra-ui/react";
-import React from "react";
 import { AiFillHeart } from "react-icons/ai";
 import { FaComment } from "react-icons/fa";
 import {

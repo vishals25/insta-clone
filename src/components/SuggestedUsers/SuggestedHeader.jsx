@@ -1,5 +1,4 @@
 import { Avatar, Box, Flex, Text, Link } from "@chakra-ui/react";
-import React, { useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
 const SuggestedHeader = () => {
