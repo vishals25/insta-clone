@@ -1,5 +1,4 @@
 import { useAuthState } from "react-firebase-hooks/auth";
-import useAuthStore from "../store/authStore";
 import PageLayout from "./Layout/PageLayout/PageLayout";
 import AuthPage from "./pages/AuthPage/AuthPage";
 import HomePage from "./pages/HomePage/HomePage";

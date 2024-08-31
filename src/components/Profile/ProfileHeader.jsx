@@ -74,8 +74,8 @@ const ProfileHeader = () => {
             </Text>
           </Flex>
           <Text fontSize={"small"}>
-            <p>A wanderer Child 🫀</p>
-            <p> 🕵️‍♀️ meet me in Nebula 🌌🪐💫☄️ </p>
+            <Text>A wanderer Child 🫀</Text>
+            <Text> 🕵️‍♀️ meet me in Nebula 🌌🪐💫☄️ </Text>
           </Text>
         </VStack>
       </Flex>
