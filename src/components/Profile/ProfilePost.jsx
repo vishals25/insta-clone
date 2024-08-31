@@ -78,7 +78,7 @@ const ProfilePost = ({ img }) => {
         isOpen={isOpen}
         onClose={onClose}
         isCentered={true}
-        size={{ base: "3xl", md: "5xl" }}
+        size={{ base: "2xl", md: "4xl" }}
       >
         <ModalOverlay />
         <ModalContent>

@@ -1,3 +1,4 @@
+import useUserProfileStore from "./../../../store/userProfileStore";
 import {
   Avatar,
   AvatarGroup,
@@ -9,6 +10,8 @@ import {
 } from "@chakra-ui/react";
 
 const ProfileHeader = () => {
+  const { userProfile } = useUserProfileStore();
+
   return (
     <>
       <Flex
@@ -22,7 +25,7 @@ const ProfileHeader = () => {
           alignItems={"flex-start"}
           mx={"auto"}
         >
-          <Avatar src="/profilepic.png"></Avatar>
+          <Avatar src={userProfile.profilePicURL}></Avatar>
         </AvatarGroup>
         <VStack alignItems={"start"} gap={2} mx={"auto"} flex={1}>
           <Flex
@@ -32,7 +35,9 @@ const ProfileHeader = () => {
             alignItems={"center"}
             w={"full"}
           >
-            <Text fontSize={{ base: "small", md: "lg" }}>Vishal</Text>
+            <Text fontSize={{ base: "small", md: "lg" }}>
+              {userProfile.username}
+            </Text>
             <Flex
               gap={4}
               justifyContent={{ base: "center", sm: "flex-start" }}
@@ -51,32 +56,31 @@ const ProfileHeader = () => {
           <Flex alignItems={"center"} gap={{ base: 2, sm: 4 }}>
             <Text fontSize={{ base: "x-small", md: "small" }}>
               <Text as={"span"} fontWeight={"bold"} mr={1}>
-                159
+                {userProfile.posts.length}
               </Text>
               Posts
             </Text>
             <Text fontSize={{ base: "x-small", md: "small" }}>
               <Text as={"span"} fontWeight={"bold"} mr={1}>
-                519
+                {userProfile.followers.length}
               </Text>
               Followers
             </Text>
             <Text fontSize={{ base: "x-small", md: "small" }}>
               <Text as={"span"} fontWeight={"bold"} mr={1}>
-                69
+                {userProfile.following.length}
               </Text>
               Following
             </Text>
           </Flex>
           <Flex alignItems={"center"} gap={4}>
             <Text fontSize={"small"} fontWeight={"bold"}>
-              VISHAL 👓
+              {userProfile.fullname}
             </Text>
           </Flex>
-          <Text fontSize={"small"}>
-            <Text>A wanderer Child 🫀</Text>
-            <Text> 🕵️‍♀️ meet me in Nebula 🌌🪐💫☄️ </Text>
-          </Text>
+          <Flex fontSize={"small"}>
+            <Text>{userProfile.bio}</Text>
+          </Flex>
         </VStack>
       </Flex>
     </>
