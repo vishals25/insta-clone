@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import useAuthStore from "./../../../store/authStore";
 import EditProfile from "./EditProfile";
+import useFollowUser from "../../hooks/useFollowUser";
 
 const ProfileHeader = () => {
   const { userProfile } = useUserProfileStore();
@@ -19,6 +20,9 @@ const ProfileHeader = () => {
   const visitingAnotherProfileAndAuth =
     authUser && authUser.username !== userProfile.username;
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isFollowing, isUpdating, handleFollowUser } = useFollowUser(
+    userProfile?.uid
+  );
 
   return (
     <>
@@ -74,8 +78,10 @@ const ProfileHeader = () => {
                   color={"white"}
                   _hover={{ bg: "blue.600" }}
                   size={{ base: "xs", md: "sm" }}
+                  onClick={handleFollowUser}
+                  isLoading={isUpdating}
                 >
-                  Follow
+                  {isFollowing ? "Unfollow" : "Follow"}
                 </Button>
               </Flex>
             )}
