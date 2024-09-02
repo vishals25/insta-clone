@@ -4,13 +4,21 @@ import {
   AvatarGroup,
   Button,
   Flex,
-  Link,
   Text,
+  useDisclosure,
   VStack,
 } from "@chakra-ui/react";
+import useAuthStore from "./../../../store/authStore";
+import EditProfile from "./EditProfile";
 
 const ProfileHeader = () => {
   const { userProfile } = useUserProfileStore();
+  const authUser = useAuthStore((state) => state.user);
+  const visitingOWnProfileAndAuth =
+    authUser && authUser.username === userProfile.username;
+  const visitingAnotherProfileAndAuth =
+    authUser && authUser.username !== userProfile.username;
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
@@ -38,21 +46,41 @@ const ProfileHeader = () => {
             <Text fontSize={{ base: "small", md: "lg" }}>
               {userProfile.username}
             </Text>
-            <Flex
-              gap={4}
-              justifyContent={{ base: "center", sm: "flex-start" }}
-              alignItems={"center"}
-            >
-              <Button
-                bg={"white"}
-                color={"black"}
-                _hover={{ bg: "whiteAlpha.800" }}
-                size={{ base: "xs", md: "sm" }}
+            {visitingOWnProfileAndAuth && (
+              <Flex
+                gap={4}
+                justifyContent={{ base: "center", sm: "flex-start" }}
+                alignItems={"center"}
               >
-                Edit Profile
-              </Button>
-            </Flex>
+                <Button
+                  bg={"white"}
+                  color={"black"}
+                  _hover={{ bg: "whiteAlpha.800" }}
+                  size={{ base: "xs", md: "sm" }}
+                  onClick={onOpen}
+                >
+                  Edit Profile
+                </Button>
+              </Flex>
+            )}
+            {visitingAnotherProfileAndAuth && (
+              <Flex
+                gap={4}
+                justifyContent={{ base: "center", sm: "flex-start" }}
+                alignItems={"center"}
+              >
+                <Button
+                  bg={"blue.500"}
+                  color={"white"}
+                  _hover={{ bg: "blue.600" }}
+                  size={{ base: "xs", md: "sm" }}
+                >
+                  Follow
+                </Button>
+              </Flex>
+            )}
           </Flex>
+
           <Flex alignItems={"center"} gap={{ base: 2, sm: 4 }}>
             <Text fontSize={{ base: "x-small", md: "small" }}>
               <Text as={"span"} fontWeight={"bold"} mr={1}>
@@ -83,6 +111,7 @@ const ProfileHeader = () => {
           </Flex>
         </VStack>
       </Flex>
+      {isOpen && <EditProfile isOpen={isOpen} onClose={onClose} />}
     </>
   );
 };

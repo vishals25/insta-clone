@@ -4,7 +4,6 @@ import {
   Flex,
   Skeleton,
   SkeletonCircle,
-  SkeletonText,
   VStack,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
