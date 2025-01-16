@@ -17,7 +17,7 @@ const SuggestedUser = ({ user, setUser }) => {
   };
 
   return (
-    <Flex justifyContent={"space-between"} alignItems={"center"} w={"full"}>
+    <Flex justifyContent={"space-between"} alignItems={"center"} w={"full"} setUser={user.uid}>
       <Flex alignItems={"center"} gap={2}>
         <Avatar name="Programmer" src={user.profilePicURL} size={"sm"} />
         <VStack alignItems={"start"} mb={0} gap={0}>
